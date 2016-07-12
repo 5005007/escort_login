@@ -21,7 +21,7 @@ $TCA['tx_escort_login'] = array (
         'sortby' => 'sorting',
         'delete' => 'deleted',
         'enablecolumns' => array (
-            'disabled' => 'hidden',
+            'disabled' => 'hidden'
         ),
         'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'tca.php',
         'iconfile'          => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'ext_icon.gif',
