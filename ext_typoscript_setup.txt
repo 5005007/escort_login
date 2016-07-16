@@ -1,0 +1,7 @@
+config.tx_extbase.persistence.classes {
+	MaximKashapov\EscortLogin\Domain\Model\Account {
+		mapping {
+			tableName = tx_escort_account
+		}
+	}
+}
