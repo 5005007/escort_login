@@ -1,7 +1,6 @@
 <?php
-if (!defined ('TYPO3_MODE')) die ('Access denied.');
 
-$TCA['tx_escort_account'] = array (
+$GLOBALS['TCA']['tx_escort_account'] = array (
     'ctrl' => array (
         'title' => 'Login',
         'label' => 'user',

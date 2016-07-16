@@ -7,4 +7,4 @@ CREATE TABLE tx_escort_account (
 
         PRIMARY KEY (uid),
         KEY parent (pid)
-);
+) ENGINE=InnoDB;
