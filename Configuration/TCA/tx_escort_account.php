@@ -24,7 +24,7 @@ $GLOBALS['TCA']['tx_escort_account'] = array (
                 'size' => '20',
                 'eval' => 'trim'
             )
-        ),
+        )
     ),
     'types' => array(
         '0' => array('showitem' => 'user, pass')

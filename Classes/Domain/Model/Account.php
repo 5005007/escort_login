@@ -5,7 +5,7 @@
  * Date: 05.07.2016
  * Time: 10:56
  */
-class Tx_Escort_Account extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Account extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * @var string
      **/
