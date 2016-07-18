@@ -1,5 +1,3 @@
-{namespace d=DmitryDulepov\Realurl\ViewHelpers}
-
 <f:be.container>
     <f:be.pageRenderer includeCssFiles="{
 		1: '../typo3conf/ext/realurl/Resources/Public/realurl_be.css'
@@ -12,20 +10,10 @@
                 <div class="left">
                     <f:be.buttons.csh />
                     <f:be.menus.actionMenu>
-                        <f:be.menus.actionMenuItem label="{f:translate(key: 'LLL:EXT:realurl/Resources/Private/Language/locallang.xlf:module.index')}" controller="Overview" action="index" />
-                        <f:be.menus.actionMenuItem label="{f:translate(key: 'LLL:EXT:realurl/Resources/Private/Language/locallang.xlf:module.aliases')}" controller="Aliases" action="index" />
-                        <f:be.menus.actionMenuItem label="{f:translate(key: 'LLL:EXT:realurl/Resources/Private/Language/locallang.xlf:module.url_cache')}" controller="UrlCache" action="index" />
-                        <f:be.menus.actionMenuItem label="{f:translate(key: 'LLL:EXT:realurl/Resources/Private/Language/locallang.xlf:module.path_cache')}" controller="PathCache" action="index" />
-                        <f:comment>
-                            <f:be.menus.actionMenuItem label="{f:translate(key: 'LLL:EXT:realurl/Resources/Private/Language/locallang.xlf:module.configuration')}" controller="Configuration" action="index" />
-                        </f:comment>
+                        <f:be.menus.actionMenuItem label="{f:translate(key: 'LLL:EXT:realurl/Resources/Private/Language/locallang.xlf:module.index')}" controller="Account" action="index" />
                     </f:be.menus.actionMenu>
                 </div>
 
-                <div class="right">
-                    <f:be.pagePath />
-                    <f:be.pageInfo />
-                </div>
             </div>
 
             <f:comment>

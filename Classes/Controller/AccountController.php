@@ -37,8 +37,6 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
  */
 class AccountController extends BackendModuleController {
 
-    protected $repository;
-
     /**
      * Shows the overview of functions.
      */
@@ -47,25 +45,25 @@ class AccountController extends BackendModuleController {
 //			'isCompatibleCacheImplementation' => $this->isCompatibleCacheImplementation()
 //		));
 
-        $result = array();
 
-        $rows = $this->databaseConnection->exec_SELECTgetRows('DISTINCT tablename AS tablename', 'tx_realurl_uniqalias', '');
-        array_walk($rows, function ($row) use (&$result) {
-            $tableNameKey = $row['tablename'];
-            $tableName = '<' . $tableNameKey . '>';
-            if (isset($GLOBALS['TCA'][$tableNameKey]['ctrl']['title'])) {
-                if (substr($GLOBALS['TCA'][$tableNameKey]['ctrl']['title'], 0, 4) === 'LLL:') {
-                    $tableName = LocalizationUtility::translate($GLOBALS['TCA'][$tableNameKey]['ctrl']['title'], '');
-                } else {
-                    $tableName = $GLOBALS['TCA'][$tableNameKey]['ctrl']['title'];
-                }
-            }
-            $result[$tableNameKey] = $tableName;
+        $user = '';
+        $pass = '';
+        $uid = '';
+
+        $rows = $this->databaseConnection->exec_SELECTgetRows('user, pass, uid', 'tx_escort_account', '', '', '', '1');
+        array_walk($rows, function ($row) use (&$user, &$pass, &$uid) {
+            $user = $row['user'];
+            $pass = $row['pass'];
+            $uid = $row['uid'];
         });
 
-        asort($result);
+        $account = new \Tx_Escort_Account($user, $pass);
 
-        return $result;
+        $this->view->assignMultiple(array(
+            'account' => $account
+        ));
+
+        return $account;
 
     }
 
