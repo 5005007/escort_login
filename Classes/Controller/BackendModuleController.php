@@ -57,7 +57,7 @@ abstract class BackendModuleController extends ActionController {
         $moduleData = BackendUtility::getModuleData(
             array('controller' => ''),
             array(),
-            'tx_escort_login_web_EscortLoginEscortLogin'
+            'tx_escortlogin_web_escortloginescortlogin'
         );
         //Don't need to check if it is an array because getModuleData always returns an array. Only have to check if it's empty.
         if (!empty($moduleData)) {
@@ -110,15 +110,15 @@ abstract class BackendModuleController extends ActionController {
         $this->databaseConnection = $GLOBALS['TYPO3_DB'];
 
         // Fix pagers
-        $arguments = GeneralUtility::_GPmerged('tx_escort_login_web_EscortLoginEscortLogin');
+        $arguments = GeneralUtility::_GPmerged('tx_escortlogin_web_escortloginescortlogin');
         if ($arguments && is_array($arguments)) {
             foreach ($arguments as $argumentKey => $argumentValue) {
                 if ($argumentValue) {
                     if (!in_array($argumentKey, $this->excludedArgments)) {
-                        GeneralUtility::_GETset($argumentValue, 'tx_escort_login_web_EscortLoginEscortLogin|' . $argumentKey);
+                        GeneralUtility::_GETset($argumentValue, 'tx_escortlogin_web_escortloginescortlogin|' . $argumentKey);
                     }
                     else {
-                        GeneralUtility::_GETset('', 'tx_escort_login_web_EscortLoginEscortLogin|' . $argumentKey);
+                        GeneralUtility::_GETset('', 'tx_escortlogin_web_escortloginescortlogin|' . $argumentKey);
                     }
                 }
             }
@@ -138,7 +138,7 @@ abstract class BackendModuleController extends ActionController {
         BackendUtility::getModuleData(
             array('controller' => ''),
             array('controller' => $this->getControllerName()),
-            'tx_escort_login_web_EscortLoginEscortLogin'
+            'tx_escortlogin_web_escortloginescortlogin'
         );
     }
 }

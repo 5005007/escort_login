@@ -14,7 +14,7 @@ if (version_compare(TYPO3_version, '7.6.0', '>=')) {
         $_EXTKEY,
         '',
         array(
-            'Account' => 'index'
+            'Account' => 'index,save'
         ),
         array(
             'access' => 'user,group',

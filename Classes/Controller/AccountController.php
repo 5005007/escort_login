@@ -37,33 +37,42 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
  */
 class AccountController extends BackendModuleController {
 
-    protected $excludedArgments = array();
+    /** @var string[] */
+    protected $excludedArgments = array('uid', 'user', 'pass', 'submit');
 
+    /**
+     * @var \MaximKashapov\EscortLogin\Domain\Repository\AccountRepository
+     * @inject
+     */
     protected $repository;
 
     /**
      * Shows the overview of functions.
      */
     public function indexAction() {
-        $user = '';
-        $pass = '';
-        $uid = '';
-
-        $rows = $this->databaseConnection->exec_SELECTgetRows('user, pass, uid', 'tx_escort_account', '', '', '', '1');
-        array_walk($rows, function ($row) use (&$user, &$pass, &$uid) {
-            $user = $row['user'];
-            $pass = $row['pass'];
-            $uid = $row['uid'];
-        });
-
-        $account = new \Account($user, $pass);
-
+        $account = $this->repository->findByUid(1);
         $this->view->assignMultiple(array(
             'account' => $account
         ));
+    }
 
-        return $account;
+    /**
+     * Shows the edit form for the selected alias.
+     *
+     * @param int $uid
+     * @param string $passValue
+     */
+    public function saveAction($uid, $passValue) {
+        //$userValue = $this->request->getArgument('userValue');
+        //$account = $this->repository->findByUid((int)$this->request->getArgument('uid'));
+        $account = $this->repository->findByUid($uid);
+        //$passValue = $this->request->getArgument('pass');
 
+        $account->setPass($passValue);
+        $this->repository->update($account);
+
+
+        $this->forward('index', null, null, array('account' => $account));
     }
 
 }

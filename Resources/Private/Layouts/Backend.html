@@ -1,31 +1,5 @@
 <f:be.container>
-    <f:be.pageRenderer includeCssFiles="{
-		1: '../typo3conf/ext/realurl/Resources/Public/realurl_be.css'
-	}" includeJsFiles="{
-		2: '../typo3conf/ext/realurl/Resources/Public/realurl_be.js'
-	}" loadJQuery="1"/>
     <div class="typo3-fullDoc">
-        <div id="typo3-docheader">
-            <div class="typo3-docheader-functions">
-                <div class="left">
-                    <f:be.buttons.csh />
-                    <f:be.menus.actionMenu>
-                        <f:be.menus.actionMenuItem label="{f:translate(key: 'LLL:EXT:realurl/Resources/Private/Language/locallang.xlf:module.index')}" controller="Account" action="index" />
-                    </f:be.menus.actionMenu>
-                </div>
-
-            </div>
-
-            <f:comment>
-                <div class="typo3-docheader-buttons">
-                    <div class="left">
-                    </div>
-                    <div class="right">
-                        <f:be.buttons.shortcut />
-                    </div>
-                </div>
-            </f:comment>
-        </div>
         <div id="typo3-docbody">
             <div id="typo3-inner-docbody" class="realurl-backend">
                 <f:render section="content" />
