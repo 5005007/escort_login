@@ -12,7 +12,7 @@ $GLOBALS['TCA']['tx_escort_account'] = array (
         'user' => array(
             'label' => 'User name',
             'config' => array(
-                'type' => 'none ',
+                'type' => 'none',
                 'size' => '20',
                 'eval' => 'trim,required'
             )

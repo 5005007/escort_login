@@ -1,4 +1,5 @@
 <?php
+namespace MaximKashapov\EscortLogin\Domain\Model;
 /**
  * Created by PhpStorm.
  * User: MaximKashapov
@@ -16,15 +17,9 @@ class Account extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      **/
     protected $pass = '';
 
-    /**
-     * @var int
-     **/
-    protected $uid = -1;
-
     public function __construct($user = '', $pass = '') {
         $this->setUser($user);
         $this->setPass($pass);
-        $this->uuid = uniqid("user_", true);
     }
 
     /**
@@ -53,13 +48,6 @@ class Account extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      */
     public function setUser($user) {
         $this->user = $user;
-    }
-
-    /**
-     * @return int
-     */
-    public function uuid() {
-        return $this->uid;
     }
 
 }

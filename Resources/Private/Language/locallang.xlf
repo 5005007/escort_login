@@ -3,6 +3,20 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2014-06-02T11:48:25Z" product-name="escort_login">
 		<header/>
 		<body>
+		    <trans-unit id="module.account.user_value">
+                <source>User:</source>
+            </trans-unit>
+		    <trans-unit id="module.account.pass_value">
+                <source>Password:</source>
+            </trans-unit>
+            <trans-unit id="module.account">
+                <source>Account</source>
+            </trans-unit>
+            <trans-unit id="module.account.intro">
+				<source>This module manages user password.</source>
+			</trans-unit>
+
+
 			<trans-unit id="mlang_tabs_tab">
 				<source>Escort Login</source>
 			</trans-unit>
@@ -24,9 +38,7 @@
 			<trans-unit id="module.aliases">
 				<source>Aliases</source>
 			</trans-unit>
-			<trans-unit id="module.aliases.intro">
-				<source>This module manages aliases that are created for items like news or addresses or any other custom types of data.</source>
-			</trans-unit>
+
 			<trans-unit id="module.aliases.not_available">
 				<source>Currently there are no aliases available.</source>
 			</trans-unit>
