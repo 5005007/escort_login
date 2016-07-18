@@ -11,10 +11,10 @@ if (version_compare(TYPO3_version, '7.6.0', '>=')) {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
         'MaximKashapov.EscortLogin',
         'web',
-        'escort_login',
+        $_EXTKEY,
         '',
         array(
-            'Account' => 'index,edit'
+            'Account' => 'index'
         ),
         array(
             'access' => 'user,group',

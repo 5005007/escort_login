@@ -37,15 +37,14 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
  */
 class AccountController extends BackendModuleController {
 
+    protected $excludedArgments = array();
+
+    protected $repository;
+
     /**
      * Shows the overview of functions.
      */
     public function indexAction() {
-//		$this->view->assignMultiple(array(
-//			'isCompatibleCacheImplementation' => $this->isCompatibleCacheImplementation()
-//		));
-
-
         $user = '';
         $pass = '';
         $uid = '';
@@ -57,7 +56,7 @@ class AccountController extends BackendModuleController {
             $uid = $row['uid'];
         });
 
-        $account = new \Tx_Escort_Account($user, $pass);
+        $account = new \Account($user, $pass);
 
         $this->view->assignMultiple(array(
             'account' => $account
