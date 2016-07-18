@@ -25,14 +25,6 @@ $GLOBALS['TCA']['tx_escort_account'] = array (
                 'eval' => 'trim'
             )
         ),
-//        'quantity' => array(
-//            'label' => 'Stock Quantity',
-//            'config' => array(
-//                'type' => 'input',
-//                'size' => '4',
-//                'eval'=> 'int'
-//            )
-//        ),
     ),
     'types' => array(
         '0' => array('showitem' => 'user, pass')
